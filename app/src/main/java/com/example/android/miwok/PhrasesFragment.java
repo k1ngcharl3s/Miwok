@@ -8,15 +8,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.android.miwok.Word;
-import com.example.android.miwok.WordAdapter;
+import com.example.android.miwok.R;
 
-import java.util.ArrayList;
 
 /**
  * {@link Fragment} that displays a list of number vocabulary words.
  */
-public class NumbersFragment extends Fragment {
+public class PhrasesFragment extends Fragment {
 
     /** Handles playback of all the sound files */
     private MediaPlayer mMediaPlayer;
@@ -65,40 +63,41 @@ public class NumbersFragment extends Fragment {
         }
     };
 
-    public NumbersFragment() {
+    public PhrasesFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container, false);
+        View rootView = inflater.inflate(R.layout.words_list, container, false);
 
         // Create and setup the {@link AudioManager} to request audio focus
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
         // Create a list of words
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word(R.string.number_one, R.string.miwok_number_one,
-                R.drawable.number_one, R.raw.number_one));
-        words.add(new Word(R.string.number_two, R.string.miwok_number_two,
-                R.drawable.number_two, R.raw.number_two));
-        words.add(new Word(R.string.number_three, R.string.miwok_number_three,
-                R.drawable.number_three, R.raw.number_three));
-        words.add(new Word(R.string.number_four, R.string.miwok_number_four,
-                R.drawable.number_four, R.raw.number_four));
-        words.add(new Word(R.string.number_five, R.string.miwok_number_five,
-                R.drawable.number_five, R.raw.number_five));
-        words.add(new Word(R.string.number_six, R.string.miwok_number_six,
-                R.drawable.number_six, R.raw.number_six));
-        words.add(new Word(R.string.number_seven, R.string.miwok_number_seven,
-                R.drawable.number_seven, R.raw.number_seven));
-        words.add(new Word(R.string.number_eight, R.string.miwok_number_eight,
-                R.drawable.number_eight, R.raw.number_eight));
-        words.add(new Word(R.string.number_nine, R.string.miwok_number_nine,
-                R.drawable.number_nine, R.raw.number_nine));
-        words.add(new Word(R.string.number_ten, R.string.miwok_number_ten,
-                R.drawable.number_ten, R.raw.number_ten));
+        words.add(new Word(R.string.phrase_where_are_you_going, R.string.miwok_phrase_where_are_you_going,
+                R.raw.phrase_where_are_you_going));
+        words.add(new Word(R.string.phrase_what_is_your_name, R.string.miwok_phrase_what_is_your_name,
+                R.raw.phrase_what_is_your_name));
+        words.add(new Word(R.string.phrase_my_name_is, R.string.miwok_phrase_my_name_is,
+                R.raw.phrase_my_name_is));
+        words.add(new Word(R.string.phrase_how_are_you_feeling, R.string.miwok_phrase_how_are_you_feeling,
+                R.raw.phrase_how_are_you_feeling));
+        words.add(new Word(R.string.phrase_im_feeling_good, R.string.miwok_phrase_im_feeling_good,
+                R.raw.phrase_im_feeling_good));
+        words.add(new Word(R.string.phrase_are_you_coming, R.string.miwok_phrase_are_you_coming,
+                R.raw.phrase_are_you_coming));
+        words.add(new Word(R.string.phrase_yes_im_coming, R.string.miwok_phrase_yes_im_coming,
+                R.raw.phrase_yes_im_coming));
+        words.add(new Word(R.string.phrase_im_coming, R.string.miwok_phrase_im_coming,
+                R.raw.phrase_im_coming));
+        words.add(new Word(R.string.phrase_lets_go, R.string.lets_go,
+                R.raw.phrase_lets_go));
+        words.add(new Word(R.string.phrase_come_here, R.string.miwok_phrase_come_here,
+                R.raw.phrase_come_here));
+
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.

@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.android.miwok.Word;
-import com.example.android.miwok.WordAdapter;
+import com.example.android.miwok.R;
 
-import java.util.ArrayList;
-
+/**
+ * {@link Fragment} that displays a list of family vocabulary words.
+ */
 public class FamilyFragment extends Fragment {
 
     /** Handles playback of all the sound files */
